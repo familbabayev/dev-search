@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 import os
+from webbrowser import get
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +29,9 @@ environ.Env.read_env()
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DEBUG")
+DEBUG = True
+if os.getcwd() == '/app':
+    DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'devsrch.herokuapp.com']
 

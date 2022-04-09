@@ -35,7 +35,7 @@ To run this project, you will need to add the following environment variables to
 
 `DEBUG` - True or False
 
-`SECRET_KEY` - Strong random secret key for django app
+`SECRET_KEY` - Strong Random Key of Characters
 
 `DATABASE_NAME` - Database name
 

@@ -21,7 +21,7 @@ def projects(request):
 
 def project(request, pk):
     projectObj = Project.objects.get(id=pk)
-    form = ReviewForm() 
+    form = ReviewForm()
 
     if request.method == 'POST':
         form = ReviewForm(request.POST)
@@ -33,7 +33,7 @@ def project(request, pk):
         projectObj.getVoteCount
 
         messages.success(request, "Your review was successfully submitted!")
-        
+
         return redirect('project', pk=projectObj.id)
 
     context = {'project': projectObj, 'form': form}
@@ -80,7 +80,7 @@ def updateProject(request, pk):
 
             return redirect('account')
 
-    context = {'form': form, 'project':project}
+    context = {'form': form, 'project': project}
     return render(request, 'projects/project_form.html', context=context)
 
 
